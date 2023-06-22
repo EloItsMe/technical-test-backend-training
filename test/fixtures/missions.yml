@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  missiom_type: MyString
+  date: 2023-06-22
+  price: 1
+  listing: one
+
+two:
+  missiom_type: MyString
+  date: 2023-06-22
+  price: 1
+  listing: two
