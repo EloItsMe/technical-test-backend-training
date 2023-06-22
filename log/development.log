@@ -2112,3 +2112,146 @@ Processing by ListingsController#index as HTML
 Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 25386)
 
 
+Started GET "/listings" for 127.0.0.1 at 2023-06-22 15:59:47 +0200
+Processing by ListingsController#index as HTML
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/listings_controller.rb:12:in `generate_mission'
+  [1m[36mListing Load (0.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:13:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "first_checkin"], ["date", "2016-10-10"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:13:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "last_checkout"], ["date", "2016-10-15"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:14:in `block in generate_mission'
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:15:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:16:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "checkout_checkin"], ["date", "2016-10-13"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:16:in `block in generate_mission'
+  [1m[36mCACHE Listing Load (0.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:13:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "first_checkin"], ["date", "2016-10-16"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:13:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "last_checkout"], ["date", "2016-10-20"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:14:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:15:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:16:in `block in generate_mission'
+  [1m[36mCACHE Mission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "checkout_checkin"], ["date", "2016-10-13"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:16:in `block in generate_mission'
+  [1m[36mListing Load (0.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:13:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "first_checkin"], ["date", "2016-10-15"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:13:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "last_checkout"], ["date", "2016-10-20"], ["price", 5], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:14:in `block in generate_mission'
+  [1m[36mReservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:15:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:16:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "checkout_checkin"], ["date", "2016-10-18"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:16:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/listings_controller.rb:25:in `map'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 13000)
+
+
+Started GET "/listings" for 127.0.0.1 at 2023-06-22 16:02:18 +0200
+Processing by ListingsController#index as HTML
+  [1m[36mBooking Load (0.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/listings_controller.rb:17:in `generate_mission'
+  [1m[36mListing Load (0.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "first_checkin"], ["date", "2016-10-10"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "last_checkout"], ["date", "2016-10-15"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:19:in `block in generate_mission'
+  [1m[36mReservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:20:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "checkout_checkin"], ["date", "2016-10-13"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mCACHE Listing Load (0.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "first_checkin"], ["date", "2016-10-16"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "last_checkout"], ["date", "2016-10-20"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:19:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:20:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mCACHE Mission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "checkout_checkin"], ["date", "2016-10-13"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mListing Load (0.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "first_checkin"], ["date", "2016-10-15"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "last_checkout"], ["date", "2016-10-20"], ["price", 5], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:19:in `block in generate_mission'
+  [1m[36mReservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:20:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "checkout_checkin"], ["date", "2016-10-18"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mMission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/listings_controller.rb:30:in `map'
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 25326)
+
+
+Started GET "/listings.1" for 127.0.0.1 at 2023-06-22 16:02:22 +0200
+Processing by ListingsController#index as */*
+  [1m[36mBooking Load (0.1ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/controllers/listings_controller.rb:17:in `generate_mission'
+  [1m[36mListing Load (0.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "first_checkin"], ["date", "2016-10-10"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "last_checkout"], ["date", "2016-10-15"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:19:in `block in generate_mission'
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:20:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "checkout_checkin"], ["date", "2016-10-13"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mCACHE Listing Load (0.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "first_checkin"], ["date", "2016-10-16"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "last_checkout"], ["date", "2016-10-20"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:19:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:20:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mCACHE Mission Load (0.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 1], ["mission_type", "checkout_checkin"], ["date", "2016-10-13"], ["price", 20], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mListing Load (0.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "first_checkin"], ["date", "2016-10-15"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:18:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "last_checkout"], ["date", "2016-10-20"], ["price", 5], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:19:in `block in generate_mission'
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:20:in `block in generate_mission'
+  [1m[36mCACHE Reservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = ? ORDER BY "reservations"."id" ASC LIMIT ?[0m  [["listing_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? AND "missions"."mission_type" = ? AND "missions"."date" = ? AND "missions"."price" = ? LIMIT ?[0m  [["listing_id", 2], ["mission_type", "checkout_checkin"], ["date", "2016-10-18"], ["price", 10], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:21:in `block in generate_mission'
+  [1m[36mMission Load (0.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/listings_controller.rb:30:in `map'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 13000)
+
+
+Started GET "/listings/1" for 127.0.0.1 at 2023-06-22 16:02:29 +0200
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMission Load (0.2ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."listing_id" = ? LIMIT ?[0m  [["listing_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:9:in `show'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 876)
+
+
